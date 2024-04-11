@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "405130473643",
+    "project_id": "compare-app-f00bb",
+    "storage_bucket": "compare-app-f00bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405130473643:android:5750991010684decdac7ee",
+        "android_client_info": {
+          "package_name": "com.example.compare_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZXUuTq_Mm0EIAOdvMQYgWs4IlQVoUNTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
