@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'home_tab.dart';
 import 'search_tab.dart';
 import 'profile_tab.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

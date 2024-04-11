@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import './login_screen.dart'; // Assuming this is the correct import for the login screen
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:compare_app/firebase_options.dart';
 
