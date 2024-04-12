@@ -204,7 +204,7 @@ Future<double> getPrice(String store, String item) async {
                     itemCount: prices1.length,
                     itemBuilder: (context, index) {
                       return ListTile(
-                        title: Text('\$${prices1[index]}'),
+                        title: Text('$selectedItem - $selectedStore1: \$${prices1[index]}'),
                       );
                     },
                   ),
@@ -214,7 +214,7 @@ Future<double> getPrice(String store, String item) async {
                     itemCount: prices2.length,
                     itemBuilder: (context, index) {
                       return ListTile(
-                        title: Text('\$${prices2[index]}'),
+                        title: Text('$selectedItem - $selectedStore2: \$${prices2[index]}'),
                       );
                     },
                   ),
