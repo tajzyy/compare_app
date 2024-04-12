@@ -1,0 +1,212 @@
+{
+    "stores": [
+      {
+        "name": "Aldi",
+        "rank": 1,
+        "items": [
+          {"name": "milk", "price": 1.50},
+          {"name": "bread", "price": 2.00},
+          {"name": "eggs", "price": 1.75},
+          {"name": "orange juice", "price": 3.00},
+          {"name": "chicken", "price": 6.00},
+          {"name": "broccoli", "price": 3.50},
+          {"name": "lettuce", "price": 2.50},
+          {"name": "bananas", "price": 1.75},
+          {"name": "apples", "price": 3.00},
+          {"name": "oranges", "price": 3.00},
+          {"name": "flour", "price": 4.00},
+          {"name": "sugar", "price": 2.00},
+          {"name": "ice cream", "price": 4.00},
+          {"name": "soda", "price": 1.50},
+          {"name": "beer", "price": 7.00},
+          {"name": "wine", "price": 12.00},
+          {"name": "chips", "price": 3.00}
+        ]
+      },
+      {
+        "name": "Costco",
+        "rank": 2,
+        "items": [
+          {"name": "milk", "price": 2.00},
+          {"name": "bread", "price": 2.50},
+          {"name": "eggs", "price": 2.25},
+          {"name": "orange juice", "price": 3.50},
+          {"name": "chicken", "price": 5.00},
+          {"name": "broccoli", "price": 3.00},
+          {"name": "lettuce", "price": 2.00},
+          {"name": "bananas", "price": 1.50},
+          {"name": "apples", "price": 2.50},
+          {"name": "oranges", "price": 2.50},
+          {"name": "flour", "price": 3.50},
+          {"name": "sugar", "price": 1.75},
+          {"name": "ice cream", "price": 4.50},
+          {"name": "soda", "price": 1.25},
+          {"name": "beer", "price": 6.00},
+          {"name": "wine", "price": 10.00},
+          {"name": "chips", "price": 2.50}
+        ]
+      },
+      {
+        "name": "Sam's Club",
+        "rank": 3,
+        "items": [
+          {"name": "milk", "price": 2.25},
+          {"name": "bread", "price": 2.75},
+          {"name": "eggs", "price": 2.50},
+          {"name": "orange juice", "price": 3.75},
+          {"name": "chicken", "price": 5.50},
+          {"name": "broccoli", "price": 3.25},
+          {"name": "lettuce", "price": 2.25},
+          {"name": "bananas", "price": 2.00},
+          {"name": "apples", "price": 3.25},
+          {"name": "oranges", "price": 3.25},
+          {"name": "flour", "price": 4.50},
+          {"name": "sugar", "price": 2.50},
+          {"name": "ice cream", "price": 5.00},
+          {"name": "soda", "price": 1.75},
+          {"name": "beer", "price": 7.50},
+          {"name": "wine", "price": 15.00},
+          {"name": "chips", "price": 3.50}
+        ]
+      },
+      {
+        "name": "Walmart",
+        "rank": 4,
+        "items": [
+          {"name": "milk", "price": 2.50},
+          {"name": "bread", "price": 3.00},
+          {"name": "eggs", "price": 2.75},
+          {"name": "orange juice", "price": 4.00},
+          {"name": "chicken", "price": 6.50},
+          {"name": "broccoli", "price": 3.75},
+          {"name": "lettuce", "price": 2.75},
+          {"name": "bananas", "price": 2.25},
+          {"name": "apples", "price": 3.50},
+          {"name": "oranges", "price": 3.50},
+          {"name": "flour", "price": 5.00},
+          {"name": "sugar", "price": 3.00},
+          {"name": "ice cream", "price": 6.00},
+          {"name": "soda", "price": 2.00},
+          {"name": "beer", "price": 8.00},
+          {"name": "wine", "price": 14.00},
+          {"name": "chips", "price": 4.00}
+        ]
+      },
+      {
+        "name": "Trader Joe's",
+        "rank": 5,
+        "items": [
+          {"name": "milk", "price": 3.00},
+          {"name": "bread", "price": 3.50},
+          {"name": "eggs", "price": 3.25},
+          {"name": "orange juice", "price": 5.00},
+          {"name": "chicken", "price": 7.00},
+          {"name": "broccoli", "price": 4.00},
+          {"name": "lettuce", "price": 3.00},
+          {"name": "bananas", "price": 2.75},
+          {"name": "apples", "price": 4.00},
+          {"name": "oranges", "price": 4.00},
+          {"name": "flour", "price": 6.00},
+          {"name": "sugar", "price": 4.00},
+          {"name": "ice cream", "price": 7.00},
+          {"name": "soda", "price": 2.50},
+          {"name": "beer", "price": 9.00},
+          {"name": "wine", "price": 16.00},
+          {"name": "chips", "price": 3.50}
+        ]
+      },
+      {
+        "name": "Meijer",
+        "rank": 6,
+        "items": [
+          {"name": "milk", "price": 3.50},
+          {"name": "bread", "price": 4.00},
+          {"name": "eggs", "price": 3.75},
+          {"name": "orange juice", "price": 5.50},
+          {"name": "chicken", "price": 8.00},
+          {"name": "broccoli", "price": 4.50},
+          {"name": "lettuce", "price": 3.50},
+          {"name": "bananas", "price": 3.00},
+          {"name": "apples", "price": 4.50},
+          {"name": "oranges", "price": 4.50},
+          {"name": "flour", "price": 7.00},
+          {"name": "sugar", "price": 5.00},
+          {"name": "ice cream", "price": 8.00},
+          {"name": "soda", "price": 3.00},
+          {"name": "beer", "price": 10.00},
+          {"name": "wine", "price": 18.00},
+          {"name": "chips", "price": 4.00}
+        ]
+      },
+      {
+        "name": "Target",
+        "rank": 7,
+        "items": [
+          {"name": "milk", "price": 4.00},
+          {"name": "bread", "price": 4.50},
+          {"name": "eggs", "price": 4.25},
+          {"name": "orange juice", "price": 6.00},
+          {"name": "chicken", "price": 9.00},
+          {"name": "broccoli", "price": 5.00},
+          {"name": "lettuce", "price": 4.00},
+          {"name": "bananas", "price": 3.50},
+          {"name": "apples", "price": 5.00},
+          {"name": "oranges", "price": 5.00},
+          {"name": "flour", "price": 8.00},
+          {"name": "sugar", "price": 6.00},
+          {"name": "ice cream", "price": 9.00},
+          {"name": "soda", "price": 3.50},
+          {"name": "beer", "price": 11.00},
+          {"name": "wine", "price": 20.00},
+          {"name": "chips", "price": 5.00}
+        ]
+      },
+      {
+        "name": "Whole Foods",
+        "rank": 8,
+        "items": [
+          {"name": "milk", "price": 5.00},
+          {"name": "bread", "price": 5.50},
+          {"name": "eggs", "price": 5.25},
+          {"name": "orange juice", "price": 7.00},
+          {"name": "chicken", "price": 10.00},
+          {"name": "broccoli", "price": 6.00},
+          {"name": "lettuce", "price": 5.00},
+          {"name": "bananas", "price": 4.50},
+          {"name": "apples", "price": 6.00},
+          {"name": "oranges", "price": 6.00},
+          {"name": "flour", "price": 9.00},
+          {"name": "sugar", "price": 7.00},
+          {"name": "ice cream", "price": 10.00},
+          {"name": "soda", "price": 4.00},
+          {"name": "beer", "price": 12.00},
+          {"name": "wine", "price": 22.00},
+          {"name": "chips", "price": 6.00}
+        ]
+      },
+      {
+        "name": "Erewhon",
+        "rank": 9,
+        "items": [
+          {"name": "milk", "price": 5.50},
+          {"name": "bread", "price": 6.00},
+          {"name": "eggs", "price": 5.75},
+          {"name": "orange juice", "price": 7.50},
+          {"name": "chicken", "price": 11.00},
+          {"name": "broccoli", "price": 6.50},
+          {"name": "lettuce", "price": 5.50},
+          {"name": "bananas", "price": 5.00},
+          {"name": "apples", "price": 6.50},
+          {"name": "oranges", "price": 6.50},
+          {"name": "flour", "price": 10.00},
+          {"name": "sugar", "price": 8.00},
+          {"name": "ice cream", "price": 11.00},
+          {"name": "soda", "price": 4.50},
+          {"name": "beer", "price": 13.00},
+          {"name": "wine", "price": 24.00},
+          {"name": "chips", "price": 7.00}
+        ]
+      }
+    ]
+  }
+  

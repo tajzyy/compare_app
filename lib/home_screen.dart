@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_tab.dart';
 import 'search_tab.dart';
 import 'profile_tab.dart';
+import 'test_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
