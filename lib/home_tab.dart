@@ -64,6 +64,77 @@ class _HomeTabState extends State<HomeTab> {
     });
   }
 
+Future<double> getPrice(String store, String item) async {
+  try {
+    // Query the specified store document
+    DocumentSnapshot storeSnapshot = await FirebaseFirestore.instance
+        .collection('stores')
+        .doc(store)
+        .get();
+
+    // If the store document exists, search for the item within the "items" object
+    if (storeSnapshot.exists) {
+      // Cast the data to the expected type
+      Map<String, dynamic>? data = storeSnapshot.data() as Map<String, dynamic>?;
+
+      // Check if data is not null and contains the "items" field
+      if (data != null && data.containsKey('items')) {
+        Map<String, dynamic> items = data['items'];
+
+        // Search for the item in the "items" object
+        if (items.containsKey(item)) {
+          // Convert the item price to double before returning
+          return items[item].toDouble();
+        }
+      }
+      print('Price not found for $item in $store');
+      return 0.0;
+    }
+    // Return a default value if the store document does not exist
+    return 0.0;
+  } catch (e) {
+    print('Error getting price: $e');
+    return 0.0; // or any default value you prefer
+  }
+}
+
+
+  void addItem() async {
+    if (selectedStore1.isNotEmpty && selectedItem.isNotEmpty) {
+      double price = await getPrice(selectedStore1, selectedItem);
+      if (price != 0.0) {
+        setState(() {
+          int index = prices1.indexWhere((element) => element == 0);
+          if (index != -1) {
+            prices1[index] = price;
+          } else {
+            prices1.add(price);
+          }
+          totals[0] = prices1.fold(0, (sum, price) => sum + price);
+        });
+      } else {
+        print('Price not found for $selectedItem in $selectedStore1');
+      }
+    }
+
+    if (selectedStore2.isNotEmpty && selectedItem.isNotEmpty) {
+      double price = await getPrice(selectedStore2, selectedItem);
+      if (price != 0.0) {
+        setState(() {
+          int index = prices2.indexWhere((element) => element == 0);
+          if (index != -1) {
+            prices2[index] = price;
+          } else {
+            prices2.add(price);
+          }
+          totals[1] = prices2.fold(0, (sum, price) => sum + price);
+        });
+      } else {
+        print('Price not found for $selectedItem in $selectedStore2');
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,7 +193,7 @@ class _HomeTabState extends State<HomeTab> {
             ],
           ),
           ElevatedButton(
-            onPressed: null,
+            onPressed: addItem,
             child: Text('Add'),
           ),
           Flexible(
@@ -163,46 +234,3 @@ class _HomeTabState extends State<HomeTab> {
     );
   }
 }
-// void addItem() {
-//   if (selectedStore1.isNotEmpty && selectedItem.isNotEmpty) {
-//     // Check if the selected item already exists in the prices1 list
-//     int index = prices1.indexWhere((element) => element == 0);
-//     if (index != -1) {
-//       setState(() {
-//         prices1[index] = getPrice(selectedStore1, selectedItem);
-//         totals[0] = prices1.fold(0, (sum, price) => sum + price);
-//       });
-//     } else {
-//       setState(() {
-//         prices1.add(getPrice(selectedStore1, selectedItem));
-//         totals[0] = prices1.fold(0, (sum, price) => sum + price);
-//       });
-//     }
-//   }
-//   if (selectedStore2.isNotEmpty && selectedItem.isNotEmpty) {
-//     // Check if the selected item already exists in the prices2 list
-//     int index = prices2.indexWhere((element) => element == 0);
-//     if (index != -1) {
-//       setState(() {
-//         prices2[index] = getPrice(selectedStore2, selectedItem);
-//         totals[1] = prices2.fold(0, (sum, price) => sum + price);
-//       });
-//     } else {
-//       setState(() {
-//         prices2.add(getPrice(selectedStore2, selectedItem));
-//         totals[1] = prices2.fold(0, (sum, price) => sum + price);
-//       });
-//     }
-//   }
-// }
-
-// double getPrice(String store, String item) {
-//   // Use the document ID as the store name and the food item name as the value
-//   QuerySnapshot itemSnapshot = FirebaseFirestore.instance
-//       .collection('stores')
-//       .doc(store)
-//       .collection('items')
-//       .where('name', isEqualTo: item.split('-').last)
-//       .get();
-//   return itemSnapshot.docs.first['price'];
-// }
