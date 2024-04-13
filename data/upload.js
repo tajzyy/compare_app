@@ -11,13 +11,25 @@ const firestore = admin.firestore();
 const storesData = require('./stores.json');
 
 storesData.stores.forEach(store => {
-  firestore.collection('stores').doc(store.name.toLowerCase()).set({
-    rank: store.rank,
-    items: store.items.reduce((acc, item) => {
-      acc[item.name] = item.price;
-      return acc;
-    }, {})
+  const storeRef = firestore.collection('stores').doc(store.name.toLowerCase());
+  
+  // Update the map field directly with prices and discounts
+  const itemsToUpdate = {};
+  store.items.forEach(item => {
+    itemsToUpdate[item.name.toLowerCase()] = {
+      price: item.price,
+      discount: item.discount
+    };
+  });
+  
+  // Update the entire items map field
+  storeRef.update({
+    items: itemsToUpdate
+  })
+  .then(() => {
+    console.log(`Prices and discounts updated successfully for store ${store.name}.`);
+  })
+  .catch(error => {
+    console.error(`Error updating prices and discounts for store ${store.name}:`, error);
   });
 });
-
-console.log('Data imported successfully.');
