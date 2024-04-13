@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'home_tab.dart';
 import 'search_tab.dart';
 import 'profile_tab.dart';
-import 'test_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -23,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text('Cart Compare'),
+        backgroundColor: Color.fromRGBO(255,242,147,0.7)
       ),
       body: _tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -32,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
             _currentIndex = index;
           });
         },
+        backgroundColor: const Color.fromRGBO(144,170,122, 1),
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

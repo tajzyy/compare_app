@@ -29,6 +29,7 @@ class ProfileTab extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => SavedListsScreen(lists: lists),
                       ),
+                    
                     );
                   },
                   child: Text('Saved Lists'),
@@ -42,7 +43,9 @@ class ProfileTab extends StatelessWidget {
                     );
                   },
                   child: Text('Favorites'),
+                  
                 ),
+            
                 ElevatedButton(
                   onPressed: () async {
                     await FirebaseAuth.instance.signOut();
@@ -51,7 +54,7 @@ class ProfileTab extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => LoginScreen()),
                     );
                   },
-                  child: Text('Logout'),
+                  child: Text('Logout')
                 ),
               ],
             ),

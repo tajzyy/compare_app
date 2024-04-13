@@ -72,33 +72,33 @@ class _HomeTabState extends State<HomeTab> {
     });
   }
 
-Future<double> getPrice(String store, String item) async {
-  try {
-    DocumentSnapshot storeSnapshot = await FirebaseFirestore.instance
-        .collection('stores')
-        .doc(store)
-        .get();
+  Future<double> getPrice(String store, String item) async {
+    try {
+      DocumentSnapshot storeSnapshot = await FirebaseFirestore.instance
+          .collection('stores')
+          .doc(store)
+          .get();
 
-    if (storeSnapshot.exists) {
-      Map<String, dynamic>? data =
-          storeSnapshot.data() as Map<String, dynamic>?;
+      if (storeSnapshot.exists) {
+        Map<String, dynamic>? data =
+            storeSnapshot.data() as Map<String, dynamic>?;
 
-      if (data != null && data.containsKey('items')) {
-        Map<String, dynamic> items = data['items'];
+        if (data != null && data.containsKey('items')) {
+          Map<String, dynamic> items = data['items'];
 
-        if (items.containsKey(item)) {
-          return items[item]['price'].toDouble();
+          if (items.containsKey(item)) {
+            return items[item]['price'].toDouble();
+          }
         }
+        print('Price not found for $item in $store');
+        return 0.0;
       }
-      print('Price not found for $item in $store');
+      return 0.0;
+    } catch (e) {
+      print('Error getting price: $e');
       return 0.0;
     }
-    return 0.0;
-  } catch (e) {
-    print('Error getting price: $e');
-    return 0.0;
   }
-}
 
   void addItemToList1() async {
     if (selectedStore1.isNotEmpty && selectedItem.isNotEmpty) {
@@ -189,27 +189,21 @@ Future<double> getPrice(String store, String item) async {
     );
 
     if (listName != null) {
-      // Save list to Firestore
       User? user = FirebaseAuth.instance.currentUser;
       if (user != null) {
-        CollectionReference listsRef = FirebaseFirestore.instance.collection('lists');
-        await listsRef.doc(user.uid).collection('user_lists').doc(listName).set({
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(user.uid)
+            .collection('lists')
+            .doc(listName)
+            .set({
           'items': itemsToSave.map((item) => {
-            'selectedItem': item.selectedItem,
-            'selectedStore': item.selectedStore,
-            'price': item.price,
-          }).toList(),
+                'selectedItem': item.selectedItem,
+                'selectedStore': item.selectedStore,
+                'price': item.price,
+              }).toList(),
           'total': totalToSave,
         });
-
-        // Show success message
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('List saved successfully'),
-          duration: Duration(seconds: 2),
-        ));
-      } else {
-        // Handle case where user is null
-        print('User is null');
       }
     }
   }
@@ -217,98 +211,122 @@ Future<double> getPrice(String store, String item) async {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Shopping List')),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              DropdownButton<String>(
-                value: selectedStore1.isNotEmpty ? selectedStore1 : null,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedStore1 = newValue!;
-                  });
-                },
-                items: storeOptions.map<DropdownMenuItem<String>>((String? value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value ?? 'Blank'),
-                    key: Key(value ?? 'Blank'),
-                  );
-                }).toList(),
-              ),
-              DropdownButton<String>(
-                value: selectedItem.isNotEmpty ? selectedItem : null,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedItem = newValue!;
-                  });
-                },
-                items: allFoodItems.map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                    key: Key(value),
-                  );
-                }).toList(),
-              ),
-               DropdownButton<String>(
-                value: selectedStore2.isNotEmpty ? selectedStore2 : null,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedStore2 = newValue!;
-                  });
-                },
-                items: storeOptions.map<DropdownMenuItem<String>>((String? value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value ?? 'Blank'),
-                    key: Key(value ?? 'Blank'),
-                  );
-                }).toList(),
-              ),
-            ],
+          Container(
+            color: const Color.fromARGB(255, 187, 209, 251),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                DropdownButton<String>(
+                  value: selectedStore1.isNotEmpty ? selectedStore1 : null,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      selectedStore1 = newValue!;
+                    });
+                  },
+                  items: storeOptions.map<DropdownMenuItem<String>>(
+                    (String? value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value ?? 'Blank'),
+                        key: Key(value ?? 'Blank'),
+                      );
+                    },
+                  ).toList(),
+                ),
+                DropdownButton<String>(
+                  value: selectedItem.isNotEmpty ? selectedItem : null,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      selectedItem = newValue!;
+                    });
+                  },
+                  items: allFoodItems.map<DropdownMenuItem<String>>(
+                    (String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                        key: Key(value),
+                      );
+                    },
+                  ).toList(),
+                ),
+                DropdownButton<String>(
+                  value: selectedStore2.isNotEmpty ? selectedStore2 : null,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      selectedStore2 = newValue!;
+                    });
+                  },
+                  items: storeOptions
+                      .map<DropdownMenuItem<String>>(
+                        (String? value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value ?? 'Blank'),
+                        key: Key(value ?? 'Blank'),
+                      );
+                    },
+                  ).toList(),
+                ),
+              ],
+            ),
           ),
-          Flexible(
+          Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: items1.length,
-                    itemBuilder: (context, index) {
-                      return ListTile(
-                        title: Text('${items1[index].selectedItem} - ${items1[index].selectedStore}: \$${items1[index].price}'),
-                      );
-                    },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: const Color.fromARGB(236, 243, 245, 1),
+                      ),
+                    ),
+                    child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: items1.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          title: Text(
+                              '${items1[index].selectedItem} - ${items1[index].selectedStore} : \$${items1[index].price}'),
+                        );
+                      },
+                    ),
                   ),
                 ),
                 Expanded(
-                  child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: items2.length,
-                    itemBuilder: (context, index) {
-                      return ListTile(
-                        title: Text('${items2[index].selectedItem} - ${items2[index].selectedStore}: \$${items2[index].price}'),
-                      );
-                    },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: const Color.fromARGB(236, 243, 245, 1),
+                      ),
+                    ),
+                    child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: items2.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          title: Text(
+                              '${items2[index].selectedItem} - ${items2[index].selectedStore} : \$${items2[index].price}'),
+                        );
+                      },
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-           Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(
                 onPressed: addItemToList1,
-                child: Text('+'),
+                child: Text('Add'),
               ),
               ElevatedButton(
                 onPressed: addItemToList2,
-                child: Text('+'),
+                child: Text('Add'),
               ),
             ],
           ),
@@ -341,8 +359,8 @@ Future<double> getPrice(String store, String item) async {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text('Total: \$${total1.toStringAsFixed(2)}'),
-              Text('Total: \$${total2.toStringAsFixed(2)}'),
+              Text('Total: \$$total1'),
+              Text('Total: \$$total2'),
             ],
           ),
         ],

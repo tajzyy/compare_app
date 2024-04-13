@@ -11,6 +11,7 @@ class ListDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(list.id),
+        backgroundColor: Color.fromRGBO(255,242,147,0.7)
       ),
       body: ListView(
         children: [

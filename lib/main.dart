@@ -20,7 +20,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Color.fromRGBO(144,170,122,1),
+          background: Color.fromRGBO(177,205,214,1)),
         useMaterial3: true,
       ),
       home: LoginScreen(),

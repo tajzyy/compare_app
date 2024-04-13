@@ -20,81 +20,96 @@ class _SearchTabState extends State<SearchTab> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              DropdownButton<SearchType>(
-                value: _searchType,
-                onChanged: (value) {
-                  setState(() {
-                    _searchType = value!;
-                    _searchController.clear();
-                  });
-                },
-                items: [
-                  DropdownMenuItem(
-                    value: SearchType.Store,
-                    child: Text('Store'),
-                  ),
-                  DropdownMenuItem(
-                    value: SearchType.Food,
-                    child: Text('Food'),
-                  ),
-                ],
-              ),
-              SizedBox(width: 8.0),
-              Expanded(
-                child: TextField(
-                  controller: _searchController,
-                  decoration: InputDecoration(
-                    labelText: _searchType == SearchType.Store ? 'Search for a store' : 'Search for food',
-                    suffixIcon: IconButton(
-                      icon: Icon(Icons.search),
-                      onPressed: () {
-                        _search();
-                      },
+        SizedBox(
+          height: 56,
+          child: Container(
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 187, 209, 251),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              children: [
+                DropdownButton<SearchType>(
+                  value: _searchType,
+                  onChanged: (value) {
+                    setState(() {
+                      _searchType = value!;
+                      _searchController.clear();
+                    });
+                  },
+                  items: [
+                    DropdownMenuItem(
+                      value: SearchType.Store,
+                      child: Text('Store'),
+                    ),
+                    DropdownMenuItem(
+                      value: SearchType.Food,
+                      child: Text('Food'),
+                    ),
+                  ],
+                ),
+                SizedBox(width: 8.0),
+                Expanded(
+                  child: TextFormField(
+                    controller: _searchController,
+                    decoration: InputDecoration(
+                      labelText: _searchType == SearchType.Store ? 'Search for a store' : 'Search for food',
+                      suffixIcon: IconButton(
+                        icon: Icon(Icons.search),
+                        onPressed: () {
+                          _search();
+                        },
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         Expanded(
-          child: ListView.builder(
-            itemCount: _searchResults.length,
-            itemBuilder: (context, index) {
-              var result = _searchResults[index];
-              return ExpansionTile(
-                title: Text(result['name']),
-                subtitle: Text('Price Rank: ${result['rank']}'),
-                children: [
-                  ListTile(
-                    title: Text('Featured Discounts:'),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: result['featuredDiscounts'].map<Widget>((discount) {
-                        return Text(discount);
-                      }).toList(),
-                    ),
+          child: Scrollbar(
+            child: ListView.builder(
+              itemCount: _searchResults.length,
+              itemBuilder: (context, index) {
+                var result = _searchResults[index];
+                return Card(
+                  margin: EdgeInsets.symmetric(vertical: 4),
+                  child: ExpansionTile(
+                    leading: Icon(Icons.store),
+                    title: Text(result['name']),
+                    subtitle: Text('Price Rank: ${result['rank']}'),
+                    children: [
+                      ListTile(
+                        title: Text('Featured Discounts:'),
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: result['featuredDiscounts'].map<Widget>((discount) {
+                            return Text(discount);
+                          }).toList(),
+                        ),
+                      ),
+                      Divider(),
+                      ListTile(
+                        title: Text('Item Prices:'),
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: result['itemPrices'].map<Widget>((item) {
+                            return Text('${item['name']}: \$${item['price']}');
+                          }).toList(),
+                        ),
+                      ),
+                      Divider(),
+                      ListTile(
+                        title: Text('Total Price:'),
+                        subtitle: Text('\$${result['totalPrice'].toStringAsFixed(2)}'),
+                      ),
+                    ],
                   ),
-                  ListTile(
-                    title: Text('Item Prices:'),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: result['itemPrices'].map<Widget>((item) {
-                        return Text('${item['name']}: \$${item['price']}');
-                      }).toList(),
-                    ),
-                  ),
-                  ListTile(
-                    title: Text('Total Price:'),
-                    subtitle: Text('\$${result['totalPrice'].toStringAsFixed(2)}'),
-                  ),
-                ],
-              );
-            },
+                );
+              },
+            ),
           ),
         ),
       ],
