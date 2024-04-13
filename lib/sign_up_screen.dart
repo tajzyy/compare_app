@@ -17,7 +17,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Sign Up'),
-        backgroundColor: Color.fromRGBO(255,242,147,0.7),
+        backgroundColor: Color.fromRGBO(216,230,235,0.7),
         automaticallyImplyLeading: true,
       ),
       body: Padding(

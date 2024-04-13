@@ -12,7 +12,7 @@ class SavedListsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Saved Lists'),
-        backgroundColor: Color.fromRGBO(255,242,147,0.7)
+        backgroundColor: Color.fromRGBO(216,230,235,0.7)
       ),
       body: Column(
         children: [

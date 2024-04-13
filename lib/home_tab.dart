@@ -317,6 +317,13 @@ class _HomeTabState extends State<HomeTab> {
               ],
             ),
           ),
+           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text('Total: \$$total1'),
+              Text('Total: \$$total2'),
+            ],
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -354,13 +361,6 @@ class _HomeTabState extends State<HomeTab> {
                 onPressed: () => saveListToFirestore(2),
                 child: Text('Save'),
               ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text('Total: \$$total1'),
-              Text('Total: \$$total2'),
             ],
           ),
         ],
