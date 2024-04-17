@@ -11,14 +11,14 @@ class ListDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(list.id),
-        backgroundColor: Color.fromRGBO(216,230,235,0.7)
+        backgroundColor: const Color.fromRGBO(216,230,235,0.7)
       ),
       body: ListView(
         children: [
           ListTile(
             title: Text('Total: \$${list['total']}'),
           ),
-          ListTile(
+          const ListTile(
             title: Text('Items:'),
           ),
           ..._buildItemList(list['items']),

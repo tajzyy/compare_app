@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
-        backgroundColor: Color.fromRGBO(216,230,235,0.7)
+        backgroundColor: const Color.fromRGBO(216,230,235,0.7)
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

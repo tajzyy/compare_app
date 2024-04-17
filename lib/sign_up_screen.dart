@@ -16,8 +16,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
-        backgroundColor: Color.fromRGBO(216,230,235,0.7),
+        title: const Text('Sign Up'),
+        backgroundColor: const Color.fromRGBO(216,230,235,0.7),
         automaticallyImplyLeading: true,
       ),
       body: Padding(
@@ -25,27 +25,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 16),
-            Text('Email'),
+            const SizedBox(height: 16),
+            const Text('Email'),
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(hintText: ''),
+              decoration: const InputDecoration(hintText: ''),
             ),
-            SizedBox(height: 16),
-            Text('Password'),
+            const SizedBox(height: 16),
+            const Text('Password'),
             TextField(
               controller: _passwordController,
               obscureText: true,
-              decoration: InputDecoration(hintText: ''),
+              decoration: const InputDecoration(hintText: ''),
             ),
-            SizedBox(height: 16),
-            Text('Confirm Password'),
+            const SizedBox(height: 16),
+            const Text('Confirm Password'),
             TextField(
               controller: _confirmPasswordController,
               obscureText: true,
-              decoration: InputDecoration(hintText: ''),
+              decoration: const InputDecoration(hintText: ''),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Center(
               child: ElevatedButton(
                 onPressed: () {
@@ -69,17 +69,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     print('Passwords do not match');
                   }
                 },
-                child: Text('Sign Up'),
+                child: const Text('Sign Up'),
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Center(
               child: ElevatedButton(
                 onPressed: () {
                   // Navigate back to login screen
                   Navigator.pop(context);
                 },
-                child: Text('Back'),
+                child: const Text('Back'),
               ),
             ),
           ],

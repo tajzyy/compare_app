@@ -165,15 +165,15 @@ class _HomeTabState extends State<HomeTab> {
       builder: (BuildContext context) {
         TextEditingController controller = TextEditingController();
         return AlertDialog(
-          title: Text('Save List'),
+          title: const Text('Save List'),
           content: TextField(
             controller: controller,
-            decoration: InputDecoration(labelText: 'Enter list name'),
+            decoration: const InputDecoration(labelText: 'Enter list name'),
           ),
           actions: <Widget>[
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: () {
@@ -181,7 +181,7 @@ class _HomeTabState extends State<HomeTab> {
                   Navigator.pop(context, controller.text);
                 }
               },
-              child: Text('Save'),
+              child: const Text('Save'),
             ),
           ],
         );
@@ -329,11 +329,11 @@ class _HomeTabState extends State<HomeTab> {
             children: [
               ElevatedButton(
                 onPressed: addItemToList1,
-                child: Text('Add'),
+                child: const Text('Add'),
               ),
               ElevatedButton(
                 onPressed: addItemToList2,
-                child: Text('Add'),
+                child: const Text('Add'),
               ),
             ],
           ),
@@ -342,11 +342,11 @@ class _HomeTabState extends State<HomeTab> {
             children: [
               ElevatedButton(
                 onPressed: () => clearList(1),
-                child: Text('Clear'),
+                child: const Text('Clear'),
               ),
               ElevatedButton(
                 onPressed: () => clearList(2),
-                child: Text('Clear'),
+                child: const Text('Clear'),
               ),
             ],
           ),
@@ -355,11 +355,11 @@ class _HomeTabState extends State<HomeTab> {
             children: [
               ElevatedButton(
                 onPressed: () => saveListToFirestore(1),
-                child: Text('Save'),
+                child: const Text('Save'),
               ),
               ElevatedButton(
                 onPressed: () => saveListToFirestore(2),
-                child: Text('Save'),
+                child: const Text('Save'),
               ),
             ],
           ),

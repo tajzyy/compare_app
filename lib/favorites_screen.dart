@@ -18,27 +18,27 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   Future<List<String>> _fetchFavorites() async {
     // Replace this with your own logic to fetch user's favorite items from Firestore
     // For demonstration purposes, returning a hardcoded list of favorite items
-    return Future.delayed(Duration(seconds: 2), () => ['Item 1', 'Item 2', 'Item 3']);
+    return Future.delayed(const Duration(seconds: 2), () => ['Item 1', 'Item 2', 'Item 3']);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Favorites'),
-        backgroundColor: Color.fromRGBO(216,230,235,0.7)
+        title: const Text('Favorites'),
+        backgroundColor: const Color.fromRGBO(216,230,235,0.7)
       ),
       body: FutureBuilder<List<String>>(
         future: _favoritesFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else {
             List<String> favorites = snapshot.data ?? [];
             if (favorites.isEmpty) {
-              return Center(child: Text('No favorites found.'));
+              return const Center(child: Text('No favorites found.'));
             } else {
               return ListView.builder(
                 itemCount: favorites.length,

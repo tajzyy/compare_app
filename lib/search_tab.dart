@@ -27,7 +27,7 @@ class _SearchTabState extends State<SearchTab> {
               color: const Color.fromARGB(255, 187, 209, 251),
               borderRadius: BorderRadius.circular(8),
             ),
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
                 DropdownButton<SearchType>(
@@ -39,24 +39,24 @@ class _SearchTabState extends State<SearchTab> {
                     });
                   },
                   items: [
-                    DropdownMenuItem(
+                    const DropdownMenuItem(
                       value: SearchType.Store,
                       child: Text('Store'),
                     ),
-                    DropdownMenuItem(
+                    const DropdownMenuItem(
                       value: SearchType.Food,
                       child: Text('Food'),
                     ),
                   ],
                 ),
-                SizedBox(width: 8.0),
+                const SizedBox(width: 8.0),
                 Expanded(
                   child: TextFormField(
                     controller: _searchController,
                     decoration: InputDecoration(
                       labelText: _searchType == SearchType.Store ? 'Search for a store' : 'Search for food',
                       suffixIcon: IconButton(
-                        icon: Icon(Icons.search),
+                        icon: const Icon(Icons.search),
                         onPressed: () {
                           _search();
                         },
@@ -75,14 +75,14 @@ class _SearchTabState extends State<SearchTab> {
               itemBuilder: (context, index) {
                 var result = _searchResults[index];
                 return Card(
-                  margin: EdgeInsets.symmetric(vertical: 4),
+                  margin: const EdgeInsets.symmetric(vertical: 4),
                   child: ExpansionTile(
-                    leading: Icon(Icons.store),
+                    leading: const Icon(Icons.store),
                     title: Text(result['name']),
                     subtitle: Text('Price Rank: ${result['rank']}'),
                     children: [
                       ListTile(
-                        title: Text('Featured Discounts:'),
+                        title: const Text('Featured Discounts:'),
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: result['featuredDiscounts'].map<Widget>((discount) {
@@ -90,9 +90,9 @@ class _SearchTabState extends State<SearchTab> {
                           }).toList(),
                         ),
                       ),
-                      Divider(),
+                      const Divider(),
                       ListTile(
-                        title: Text('Item Prices:'),
+                        title: const Text('Item Prices:'),
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: result['itemPrices'].map<Widget>((item) {
@@ -100,9 +100,9 @@ class _SearchTabState extends State<SearchTab> {
                           }).toList(),
                         ),
                       ),
-                      Divider(),
+                      const Divider(),
                       ListTile(
-                        title: Text('Total Price:'),
+                        title: const Text('Total Price:'),
                         subtitle: Text('\$${result['totalPrice'].toStringAsFixed(2)}'),
                       ),
                     ],

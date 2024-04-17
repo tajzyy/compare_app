@@ -21,8 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Cart Compare'),
-        backgroundColor: Color.fromRGBO(216,230,235,0.7)
+        title: const Text('Cart Compare'),
+        backgroundColor: const Color.fromRGBO(216,230,235,0.7)
       ),
       body: _tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -34,15 +34,15 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         backgroundColor: const Color.fromRGBO(144,170,122, 1),
         items: [
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Search',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
           ),

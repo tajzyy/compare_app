@@ -5,14 +5,14 @@ import 'list_detail_screen.dart'; // Import your ListDetailScreen here
 class SavedListsScreen extends StatelessWidget {
   final List<DocumentSnapshot> lists;
 
-  SavedListsScreen({required this.lists});
+  const SavedListsScreen({required this.lists});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Saved Lists'),
-        backgroundColor: Color.fromRGBO(216,230,235,0.7)
+        title: const Text('Saved Lists'),
+        backgroundColor: const Color.fromRGBO(216,230,235,0.7)
       ),
       body: Column(
         children: [
@@ -22,7 +22,7 @@ class SavedListsScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Container(
                   decoration: BoxDecoration(
-                    border: Border.all(color: Color.fromRGBO(236, 243, 245, 1)),
+                    border: Border.all(color: const Color.fromRGBO(236, 243, 245, 1)),
                   ),
                   child: ListTile(
                     title: Text(lists[index].id),

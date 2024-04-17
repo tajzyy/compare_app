@@ -12,7 +12,7 @@ class ProfileTab extends StatelessWidget {
       future: _fetchLists(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           return Center(child: Text('Error: ${snapshot.error}'));
         } else {
@@ -32,7 +32,7 @@ class ProfileTab extends StatelessWidget {
                     
                     );
                   },
-                  child: Text('Saved Lists'),
+                  child: const Text('Saved Lists'),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -42,7 +42,7 @@ class ProfileTab extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => FavoritesScreen()),
                     );
                   },
-                  child: Text('Favorites'),
+                  child: const Text('Favorites'),
                   
                 ),
             
@@ -54,7 +54,7 @@ class ProfileTab extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => LoginScreen()),
                     );
                   },
-                  child: Text('Logout')
+                  child: const Text('Logout')
                 ),
               ],
             ),
