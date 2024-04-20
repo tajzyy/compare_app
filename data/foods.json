@@ -1,0 +1,243 @@
+{
+  "items": [
+    
+    {
+      "name": "milk",
+      "stores": [
+        {"name": "Aldi", "price": 1.50, "discount": null},
+        {"name": "Costco", "price": 2.00, "discount": null},
+        {"name": "Sam's Club", "price": 2.25, "discount": null},
+        {"name": "Walmart", "price": 2.50, "discount": null},
+        {"name": "Trader Joe's", "price": 3.00, "discount": null},
+        {"name": "Meijer", "price": 3.50, "discount": null},
+        {"name": "Target", "price": 4.00, "discount": null},
+        {"name": "Whole Foods", "price": 5.00, "discount": null},
+        {"name": "Erewhon", "price": 5.50, "discount": null}
+      ]
+    },
+    {
+      "name": "bread",
+      "stores": [
+        {"name": "Aldi", "price": 2.00, "discount": null},
+        {"name": "Costco", "price": 2.50, "discount": null},
+        {"name": "Sam's Club", "price": 2.75, "discount": null},
+        {"name": "Walmart", "price": 3.00, "discount": null},
+        {"name": "Trader Joe's", "price": 3.50, "discount": null},
+        {"name": "Meijer", "price": 4.00, "discount": null},
+        {"name": "Target", "price": 4.50, "discount": null},
+        {"name": "Whole Foods", "price": 5.50, "discount": null},
+        {"name": "Erewhon", "price": 6.00, "discount": null}
+      ]
+    },
+    {
+      "name": "eggs",
+      "stores": [
+        {"name": "Aldi", "price": 1.75, "discount": null},
+        {"name": "Costco", "price": 2.25, "discount": null},
+        {"name": "Sam's Club", "price": 2.50, "discount": null},
+        {"name": "Walmart", "price": 2.75, "discount": null},
+        {"name": "Trader Joe's", "price": 3.25, "discount": null},
+        {"name": "Meijer", "price": 3.75, "discount": null},
+        {"name": "Target", "price": 4.25, "discount": null},
+        {"name": "Whole Foods", "price": 5.25, "discount": null},
+        {"name": "Erewhon", "price": 5.75, "discount": null}
+      ]
+    },
+    {
+      "name": "orange juice",
+      "stores": [
+        {"name": "Aldi", "price": 3.00, "discount": null},
+        {"name": "Costco", "price": 3.50, "discount": null},
+        {"name": "Sam's Club", "price": 3.75, "discount": null},
+        {"name": "Walmart", "price": 4.00, "discount": null},
+        {"name": "Trader Joe's", "price": 5.00, "discount": null},
+        {"name": "Meijer", "price": 5.50, "discount": null},
+        {"name": "Target", "price": 6.00, "discount": null},
+        {"name": "Whole Foods", "price": 7.00, "discount": null},
+        {"name": "Erewhon", "price": 7.50, "discount": null}
+      ]
+    },
+    {
+      "name": "chicken",
+      "stores": [
+        {"name": "Aldi", "price": 6.00, "discount": null},
+        {"name": "Costco", "price": 5.00, "discount": null},
+        {"name": "Sam's Club", "price": 5.50, "discount": null},
+        {"name": "Walmart", "price": 6.50, "discount": null},
+        {"name": "Trader Joe's", "price": 7.00, "discount": null},
+        {"name": "Meijer", "price": 8.00, "discount": null},
+        {"name": "Target", "price": 9.00, "discount": null},
+        {"name": "Whole Foods", "price": 10.00, "discount": null},
+        {"name": "Erewhon", "price": 11.00, "discount": null}
+      ]
+    },
+    {
+      "name": "broccoli",
+      "stores": [
+        {"name": "Aldi", "price": 3.50, "discount": null},
+        {"name": "Costco", "price": 3.00, "discount": null},
+        {"name": "Sam's Club", "price": 3.25, "discount": null},
+        {"name": "Walmart", "price": 3.75, "discount": null},
+        {"name": "Trader Joe's", "price": 4.00, "discount": null},
+        {"name": "Meijer", "price": 4.50, "discount": null},
+        {"name": "Target", "price": 5.00, "discount": null},
+        {"name": "Whole Foods", "price": 6.00, "discount": null},
+        {"name": "Erewhon", "price": 6.50, "discount": null}
+      ]
+    },
+    {
+      "name": "lettuce",
+      "stores": [
+        {"name": "Aldi", "price": 2.50, "discount": null},
+        {"name": "Costco", "price": 2.00, "discount": null},
+        {"name": "Sam's Club", "price": 2.25, "discount": null},
+        {"name": "Walmart", "price": 2.75, "discount": null},
+        {"name": "Trader Joe's", "price": 3.00, "discount": null},
+        {"name": "Meijer", "price": 3.50, "discount": null},
+        {"name": "Target", "price": 4.00, "discount": null},
+        {"name": "Whole Foods", "price": 5.00, "discount": null},
+        {"name": "Erewhon", "price": 5.50, "discount": null}
+      ]
+    },
+    {
+      "name": "bananas",
+      "stores": [
+        {"name": "Aldi", "price": 1.75, "discount": null},
+        {"name": "Costco", "price": 1.50, "discount": null},
+        {"name": "Sam's Club", "price": 2.00, "discount": null},
+        {"name": "Walmart", "price": 2.25, "discount": 0.20},
+        {"name": "Trader Joe's", "price": 2.75, "discount": null},
+        {"name": "Meijer", "price": 3.00, "discount": 0.20},
+        {"name": "Target", "price": 3.50, "discount": null},
+        {"name": "Whole Foods", "price": 4.50, "discount": null},
+        {"name": "Erewhon", "price": 5.00, "discount": null}
+      ]
+    },
+    {
+      "name": "apples",
+      "stores": [
+        {"name": "Aldi", "price": 3.00, "discount": null},
+        {"name": "Costco", "price": 2.50, "discount": null},
+        {"name": "Sam's Club", "price": 3.25, "discount": null},
+        {"name": "Walmart", "price": 3.50, "discount": null},
+        {"name": "Trader Joe's", "price": 4.00, "discount": 0.50},
+        {"name": "Meijer", "price": 4.50, "discount": null},
+        {"name": "Target", "price": 5.00, "discount": null},
+        {"name": "Whole Foods", "price": 6.00, "discount": 0.15},
+        {"name": "Erewhon", "price": 6.50, "discount": null}
+      ]
+    },
+    {
+      "name": "oranges",
+      "stores": [
+        {"name": "Aldi", "price": 3.00, "discount": null},
+        {"name": "Costco", "price": 2.50, "discount": null},
+        {"name": "Sam's Club", "price": 3.25, "discount": null},
+        {"name": "Walmart", "price": 3.50, "discount": null},
+        {"name": "Trader Joe's", "price": 4.00, "discount": null},
+        {"name": "Meijer", "price": 4.50, "discount": null},
+        {"name": "Target", "price": 5.00, "discount": null},
+        {"name": "Whole Foods", "price": 6.00, "discount": null},
+        {"name": "Erewhon", "price": 6.50, "discount": null}
+      ]
+    },
+    {
+      "name": "flour",
+      "stores": [
+        {"name": "Aldi", "price": 4.00, "discount": null},
+        {"name": "Costco", "price": 3.50, "discount": null},
+        {"name": "Sam's Club", "price": 4.50, "discount": null},
+        {"name": "Walmart", "price": 5.00, "discount": null},
+        {"name": "Trader Joe's", "price": 6.00, "discount": null},
+        {"name": "Meijer", "price": 7.00, "discount": null},
+        {"name": "Target", "price": 8.00, "discount": null},
+        {"name": "Whole Foods", "price": 9.00, "discount": null},
+        {"name": "Erewhon", "price": 10.00, "discount": null}
+      ]
+    },
+    {
+      "name": "sugar",
+      "stores": [
+        {"name": "Aldi", "price": 2.00, "discount": null},
+        {"name": "Costco", "price": 1.75, "discount": 0.15},
+        {"name": "Sam's Club", "price": 2.50, "discount": null},
+        {"name": "Walmart", "price": 3.00, "discount": null},
+        {"name": "Trader Joe's", "price": 4.00, "discount": null},
+        {"name": "Meijer", "price": 5.00, "discount": null},
+        {"name": "Target", "price": 6.00, "discount": null},
+        {"name": "Whole Foods", "price": 7.00, "discount": null},
+        {"name": "Erewhon", "price": 8.00, "discount": null}
+      ]
+    },
+    {
+      "name": "ice cream",
+      "stores": [
+        {"name": "Aldi", "price": 4.00, "discount": null},
+        {"name": "Costco", "price": 4.50, "discount": null},
+        {"name": "Sam's Club", "price": 5.00, "discount": null},
+        {"name": "Walmart", "price": 6.00, "discount": null},
+        {"name": "Trader Joe's", "price": 7.00, "discount": null},
+        {"name": "Meijer", "price": 8.00, "discount": null},
+        {"name": "Target", "price": 9.00, "discount": null},
+        {"name": "Whole Foods", "price": 10.00, "discount": null},
+        {"name": "Erewhon", "price": 11.00, "discount": null}
+      ]
+    },
+    {
+      "name": "soda",
+      "stores": [
+        {"name": "Aldi", "price": 1.50, "discount": null},
+        {"name": "Costco", "price": 1.25, "discount": null},
+        {"name": "Sam's Club", "price": 1.75, "discount": 0.10},
+        {"name": "Walmart", "price": 2.00, "discount": null},
+        {"name": "Trader Joe's", "price": 2.50, "discount": null},
+        {"name": "Meijer", "price": 3.00, "discount": null},
+        {"name": "Target", "price": 3.50, "discount": null},
+        {"name": "Whole Foods", "price": 4.00, "discount": 0.30},
+        {"name": "Erewhon", "price": 4.50, "discount": null}
+      ]
+    },
+    {
+      "name": "beer",
+      "stores": [
+        {"name": "Aldi", "price": 7.00, "discount": null},
+        {"name": "Costco", "price": 6.00, "discount": null},
+        {"name": "Sam's Club", "price": 7.50, "discount": null},
+        {"name": "Walmart", "price": 8.00, "discount": null},
+        {"name": "Trader Joe's", "price": 9.00, "discount": null},
+        {"name": "Meijer", "price": 10.00, "discount": null},
+        {"name": "Target", "price": 11.00, "discount": null},
+        {"name": "Whole Foods", "price": 12.00, "discount": null},
+        {"name": "Erewhon", "price": 13.00, "discount": null}
+      ]
+    },
+    {
+      "name": "wine",
+      "stores": [
+        {"name": "Aldi", "price": 12.00, "discount": null},
+        {"name": "Costco", "price": 10.00, "discount": null},
+        {"name": "Sam's Club", "price": 15.00, "discount": null},
+        {"name": "Walmart", "price": 14.00, "discount": null},
+        {"name": "Trader Joe's", "price": 16.00, "discount": null},
+        {"name": "Meijer", "price": 18.00, "discount": null},
+        {"name": "Target", "price": 20.00, "discount": null},
+        {"name": "Whole Foods", "price": 22.00, "discount": null},
+        {"name": "Erewhon", "price": 24.00, "discount": null}
+      ]
+    },
+    {
+      "name": "chips",
+      "stores": [
+        {"name": "Aldi", "price": 3.00, "discount": null},
+        {"name": "Costco", "price": 2.50, "discount": null},
+        {"name": "Sam's Club", "price": 3.50, "discount": null},
+        {"name": "Walmart", "price": 4.00, "discount": null},
+        {"name": "Trader Joe's", "price": 3.50, "discount": null},
+        {"name": "Meijer", "price": 4.00, "discount": null},
+        {"name": "Target", "price": 5.00, "discount": null},
+        {"name": "Whole Foods", "price": 6.00, "discount": null},
+        {"name": "Erewhon", "price": 7.00, "discount": null}
+      ]
+    }
+  ]
+}
