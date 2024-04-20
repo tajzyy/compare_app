@@ -110,7 +110,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
               : Card(
                 margin: const EdgeInsets.symmetric(vertical: 4),
                 child: ExpansionTile(
-                  leading: const Icon(Icons.store),
+                  leading: const Icon(Icons.fastfood),
                   title: Text(result['name']),
                   subtitle: Text('${result['featuredDiscounts'].length} Discounts'),
                   children: [
