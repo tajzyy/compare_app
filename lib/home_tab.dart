@@ -192,9 +192,9 @@ class _HomeTabState extends State<HomeTab> {
       User? user = FirebaseAuth.instance.currentUser;
       if (user != null) {
         await FirebaseFirestore.instance
-            .collection('users')
-            .doc(user.uid)
             .collection('lists')
+            .doc(user.uid)
+            .collection('user_lists')
             .doc(listName)
             .set({
           'items': itemsToSave.map((item) => {
