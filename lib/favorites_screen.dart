@@ -157,13 +157,16 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
       print(userDocSnap.data());
       String favList = _searchType == SearchType.Store? 'fav_stores': 'fav_foods';
       if(userDocSnap.data() != null && (userDocSnap.data() as Map<String, dynamic>?)![favList] != null){ // document is null/empty
+        setState(() {
+          _listResults.clear();
+        });
         (userDocSnap.data() as Map<String, dynamic>?)![favList].forEach((itemName) async{
           DocumentSnapshot docSnapshot = await collectionRef.doc(itemName).get();
           if (docSnapshot.exists){
             Map<String, dynamic>? itemData = docSnapshot.data() as Map<String, dynamic>?;
             if(itemData != null){
               setState(() {
-                _listResults.clear();
+                
                 _listResults.add(_searchType == SearchType.Store?
                   {
                     'name': itemName.toLowerCase(),
